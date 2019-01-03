@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Play Game</title>
+  <link rel="stylesheet" type="text/css" href="Stylesheet.css">
+  <script src="game.js"></script>
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="music/NoiseAttack.mp3" type="audio/mpeg">
+  </audio>
+</head>
+
+<body onload="OnLoad()">
+
+  <h1 class="title">Robot Search And Destroy</h1>
+
+  <div class="menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutgame.html">About Game</a></li>
+      <li><a href="GameMenu.html">Play</a></li>
+
+    </ul>
+  </div>
+
+  /<br>
+
+  <h2 class="standardHeader">Play</h2>
+  <h3 class="musicCredit"> Kevin Macleod - Noise Attack</h3>
+
+  <div class="gameWindow">
+
+    <div class="commanderWindow">
+      <img class="commander" id="commander" src="img/Commander.gif" width="200" height=" 200">
+
+      <p class="commanderText" id="commanderText"> Welcome to the CITADEL, the base of operations for the Omega-Cult in this area.<br>Its your mission to take down this facility by deactivating its power core.<br><br>Lets start by fighting this enemy Mech. Use your LIGHT ATTACK to deal medium but consistent damage.<br><br> Use your HEAVY ATTACK to deal large but inconsistent damage, but be warned it needs to recharge after each use, trying to use it while its charging will cause damage to yourself.</p>
+
+      <input class="commanderButton" id="commanderButton" type="button" value="Next" onclick="nextText()" disabled="true">
+    </div>
+
+    <div class="hud">
+
+
+      <br>
+      <br>
+      <br>
+
+      <div id="playerSprite" >
+        <img id="pSprite" src="img/PR-001.png" width="150" height="150">
+        <h3>Player health:</h3>
+        <h3 id="Health">100</h3>
+        <h3>/100</h3>
+      </div>
+
+      <div id="enemySprite">
+        <img id="eSprite" src="img/enemy.png" width="150" height="150">
+        <h3>Enemy health:</h3>
+        <h3 id="enemyHealth">100</h3>
+        <h3 id="enemyMaxHealth">/100</h3>
+
+      </div>
+
+
+      <p class="gameText">Choose Attack</p>
+      <form>
+        <select id="playerAttack">
+          <option value="1">Light Attack</option>
+          <option value="2">Heavy Attack</option>
+        <input id="attackButton" type="button" value="Attack" onclick='Attack()'>
+      </form>
+
+      <p class="variableText"> - Location:</p>
+      <p class="variableText" id="areas"> Outside Citadel</p>
+      <p class="gameText" id="systems"> - Systems: Operational </p>
+      <p class="variableText"> - Heavy attack:</p>
+      <p class="variableText" id="heavyWeapon">Ready</p>
+
+
+    </div>
+    <br>
+    <br>
+        <br>
+
+    <div class="buttonLayout">
+      <p class="gameText"> - Room Navigation</p>
+      <br>
+      <br>
+
+
+      <input class="roomButtons" id="enterCitadel" type="button" value="Enter Citadel" onClick="citadelEntrance()" disabled="true">
+
+      <input class="roomButtons" id="enterMines" type="button" value="Enter Mines" onClick="enterMines()" disabled="true">
+
+      <input class="roomButtons" id="enterPrison" type="button" value="Enter Prison" onClick="enterPrison()" disabled="true">
+
+      <input class="roomButtons" id="enterFactory" type="button" value="Enter Factory" onClick="enterFactory()" disabled="true">
+
+      <input class="roomButtons" id="enterPowerRoom" type="button" value="Enter Power Room" onClick="enterPowerRoom()" disabled="true">
+
+      <input class="roomButtons" id="backToCitadel" type="button" value="Back to Citadel" onClick="backToCitadel()" disabled="true">
+
+      <br>
+      <br>
+
+
+      <p class="gameText"> - Actions</p>
+
+      <br>
+      <br>
+      <input class="actionButton" id="collectKeycard" type="button" value="Collect Keycard" onclick="collectKeycard()" disabled="true">
+      <input class="actionButton" id="collectAccessOne" type="button" value="Collect Access Card 1" onclick="accessCardOne()" disabled="true">
+      <input class="actionButton" id="collectAccessTwo" type="button" value="Collect Access Card 2" onclick="accessCardTwo()" disabled="true">
+      <input class="actionButton" id="collectAccessThree" type="button" value="Collect Access Card 3" onclick="accessCardThree()" disabled="true">
+      <input class="actionButton" id="gen1" type="button" value="Disable Generator 1" onclick="gen1()" disabled="true">
+      <input class="actionButton" id="gen2" type="button" value="Disable Generator 2" onclick="gen2()" disabled="true">
+      <input class="actionButton" id="gen3" type="button" value="Disable Generator 3" onclick="gen3()" disabled="true">
+
+
+      <br>
+
+      <img class="cardImages" id="keycard" src="img/cardnotfound.png" width="125" height="125">
+      <img class="cardImages" id="access1" src="img/cardnotfound.png" width="125" height="125">
+      <img class="cardImages" id="access2" src="img/cardnotfound.png" width="125" height="125">
+      <img class="cardImages" id="access3" src="img/cardnotfound.png" width="125" height="125">
+
+    </div>
+
+
+  </div>
+
+
+
+
+</body>
+
+</html>
